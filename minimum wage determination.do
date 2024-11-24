@@ -56,7 +56,7 @@ merge 1:1 year  using  `l', nogen
 
 
 
-gen pl=obs_value*1000/pbi
+gen pl=pbi*1000/obs_value
 
 tsset year
 foreach v of varlist rtfpna rwtfpna pl {
