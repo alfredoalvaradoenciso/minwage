@@ -22,7 +22,4 @@ La presentación aborda los siguientes puntos:
 Si tienes comentarios o sugerencias, siéntete libre de abrir un **Issue** o enviar un **Pull Request**. Todas las contribuciones son bienvenidas.
 
 ---
-
 **Autor:** Alfredo Alvarado  
-**Fecha:** 2024  
-**Licencia:** [MIT](LICENSE)
