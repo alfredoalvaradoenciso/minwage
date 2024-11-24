@@ -8,7 +8,7 @@ Haz clic en el enlace a continuación para visualizar la presentación directame
 [Ver presentación en PDF](https://github.com/alfredoalvaradoenciso/minwage/blob/main/Determinacion_Salario_Minimo.pdf)
 
 _Opcional:_ También puedes descargarla desde este enlace:  
-[Descargar PDF](Determinacion_Salario_Minimo.pdf)
+[Descargar PDF](https://github.com/alfredoalvaradoenciso/minwage/raw/refs/heads/main/Determinacion_Salario_Minimo.pdf)
 
 ## Contenido
 
