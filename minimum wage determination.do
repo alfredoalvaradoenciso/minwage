@@ -1,10 +1,10 @@
-use "C:\Users\aalvarado\Downloads\peru_employment.dta", clear //ILOSTAT
+use https://github.com/alfredoalvaradoenciso/minwage/raw/refs/heads/main/peru_employment.dta, clear //ILOSTAT
 destring time, gen(year)
 keep obs_value year
 tempfile l
 save `l'
 
-import excel "C:\Users\aalvarado\Downloads\ipc_nacional.xlsx", sheet("Base Dic.2021") cellrange(A4:F158) firstrow clear // INEI
+import excel "https://github.com/alfredoalvaradoenciso/minwage/raw/refs/heads/main/ipc_nacional.xlsx", sheet("Base Dic.2021") cellrange(A4:F158) firstrow clear // INEI
 replace Año=Año[_n-1] if Año[_n]==. 
 replace Anual="" if Anual=="-"
 destring Anual, replace
@@ -13,12 +13,12 @@ collapse (mean) ipc_nacional=Anual, by(year)
 tempfile ipc_nacional
 save `ipc_nacional'
 
-import excel "C:\Users\aalvarado\Downloads\conference_board_tfp.xlsx", sheet("Annual") cellrange(BLW7:BLW82) firstrow clear // Conference Board
+import excel "https://github.com/alfredoalvaradoenciso/minwage/raw/refs/heads/main\conference_board_tfp.xlsx", sheet("Annual") cellrange(BLW7:BLW82) firstrow clear // Conference Board
 gen year=1949+_n
 tempfile conference
 save `conference'
 
-use countrycode year ctfp cwtfp rtfpna rwtfpna if countrycode=="PER" using C:\Users\aalvarado\Downloads\pwt1001 , clear // PWT
+use countrycode year ctfp cwtfp rtfpna rwtfpna if countrycode=="PER" using https://github.com/alfredoalvaradoenciso/minwage/raw/refs/heads/main/pwt1001 , clear // PWT
 tempfile pwt
 save `pwt'
 
