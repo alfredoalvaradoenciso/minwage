@@ -128,5 +128,5 @@ tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV t
 *grc1leg2 a b c d, leg(a) ycommon title(Salario Minimo observado vs teorico) note("Nota: RMV teorica = inflation{sub:t-1}+ Δ{sub:t} productividad")
 *graph export C:\Users\aalvarado\Downloads\rmv_determination_sine.png, replace
 
-grc1leg2 a b c d, leg(a) ycommon title(Salario Minimo observado vs teorico) note("Nota: RMV teorica = inflation{sub:t-1}+ {&Delta}{sub:t} productividad + {&epsilon}{sub:t}, donde {&epsilon} = elasticidad de la oferta laboral de Reyna y Céspedes (2016).")
+grc1leg2 a b c d, leg(a) ycommon title(Salario Minimo observado vs teorico) note("Fuente: The Conference Board, INEI, BCRP, ILO." "Nota: RMV teorica{sub:t} = inflacion{sub:t-1}+ {&Delta}productividad{sub:t} + {&epsilon}{sub:t}, donde {&epsilon} = elasticidad de la oferta laboral de Reyna y Céspedes (2016).")
 graph export C:\Users\aalvarado\Downloads\rmv_determination_cone.png, replace
