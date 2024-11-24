@@ -2,10 +2,13 @@
 
 Este repositorio contiene una presentación en formato PDF que analiza la determinación teórica del salario mínimo en Perú, considerando supuestos económicos clave como la elasticidad de la oferta laboral y mercados laborales monopsonísticos.
 
-## Archivo PDF
+## Visualizar la presentación
 
-Puedes descargar o visualizar la presentación directamente aquí:  
-[Determinación Teórica del Salario Mínimo - Presentación](Determinacion_Salario_Minimo.pdf)
+Haz clic en el enlace a continuación para visualizar la presentación directamente en GitHub:  
+[Ver presentación en PDF](https://github.com/alfredoalvaradoenciso/minwage/blob/main/Determinacion_Salario_Minimo.pdf)
+
+_Opcional:_ También puedes descargarla desde este enlace:  
+[Descargar PDF](Determinacion_Salario_Minimo.pdf)
 
 ## Contenido
 
@@ -19,3 +22,7 @@ La presentación aborda los siguientes puntos:
 Si tienes comentarios o sugerencias, siéntete libre de abrir un **Issue** o enviar un **Pull Request**. Todas las contribuciones son bienvenidas.
 
 ---
+
+**Autor:** Alfredo Alvarado  
+**Fecha:** 2024  
+**Licencia:** [MIT](LICENSE)
