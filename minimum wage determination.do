@@ -99,7 +99,7 @@ local initialyear=2013
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc/100) if year>=`initialyear'+1
 replace `rmv'=`rmv'*(1+elasticity)
-tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(a, replace) title("IPC Nacional, PTF") ytitle("S/") ttext(1148 2025  "1138" 1015 2025  "1025")
+tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(a, replace) title("IPC Nacional, PTF") ytitle("Soles") ttext(1148 2025  "1138" 1015 2025  "1025")
 
 local rmv="rmv_teo2"	
 gen `rmv'_pc=(ipc_lima_subyacente+TheConferenceBoard)
@@ -107,7 +107,7 @@ local initialyear=2008
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc/100) if year>=`initialyear'+1
 replace `rmv'=`rmv'*(1+elasticity)
-tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(b, replace) title("IPC subyacente Lima, PTF") ytitle("S/") ttext(835 2024  "835" 1025 2025  "1025")
+tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(b, replace) title("IPC subyacente Lima, PTF") ytitle("Soles") ttext(835 2024  "835" 1025 2025  "1025")
 
 local rmv="rmv_teo3"
 gen `rmv'_pc=(ipc_nacional+pl_pc)
@@ -115,7 +115,7 @@ local initialyear=2013
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc/100) if year>=`initialyear'+1
 replace `rmv'=`rmv'*(1+elasticity)
-tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(c, replace) title("IPC Nacional, PL") ytitle("S/")  ttext(1471 2024  "1471" 1025 2025  "1025")
+tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(c, replace) title("IPC Nacional, PL") ytitle("Soles")  ttext(1471 2024  "1471" 1025 2025  "1025")
 
 local rmv="rmv_teo4"
 gen `rmv'_pc=(ipc_lima_subyacente+pl_pc)
@@ -123,7 +123,7 @@ local initialyear=2008
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc/100) if year>=`initialyear'+1
 replace `rmv'=`rmv'*(1+elasticity)
-tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(d, replace) title("IPC subyacente Lima, PL") ytitle("S/") ttext(1322 2024  "1322" 1025 2025  "1025")
+tsline rmv `rmv' if year>=`initialyear', legend(order(1 "RMV observada" 2 "RMV teorica")) name(d, replace) title("IPC subyacente Lima, PL") ytitle("Soles") ttext(1322 2024  "1322" 1025 2025  "1025")
 
 *grc1leg2 a b c d, leg(a) ycommon title(Salario Minimo observado vs teorico) note("Nota: RMV teorica = inflation{sub:t-1}+ Δ{sub:t} productividad")
 *graph export C:\Users\aalvarado\Downloads\rmv_determination_sine.png, replace
