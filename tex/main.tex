@@ -1,0 +1,67 @@
+\documentclass{beamer}
+\usepackage{graphicx}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+
+\title{Determinación Teórica del Salario Mínimo en Perú}
+\author{Alfredo Alvarado}
+\institute{Economista independiente}
+\date{\today}
+
+\begin{document}
+
+% Diapositiva 1: Título
+\begin{frame}
+    \titlepage
+\end{frame}
+
+% Diapositiva 4: Aplicación al Caso de Perú
+\begin{frame}{Algunos proponen que el salario mínimo deberia ser 726 soles...}
+    \begin{center}
+        \includegraphics[width=\linewidth]{bcrp_salmin.PNG}
+    \end{center}
+\end{frame}
+
+
+% Diapositiva 2: Explicación del Enfoque
+\begin{frame}{¿Qué supuestos tiene este enfoque?}
+    \begin{itemize}
+        \item \textbf{Supuestos del enfoque:} Los cambios en el salario mínimo se consideran iguales a las variaciones en la inflación y la productividad.
+        \item \textbf{Inflación:} Usa la inflacion subyacente de Lima Metropolitana. No obstante, es mejor usar la inflación nacional porque incluye todos los bienes y servicios consumidos por los trabajadores a nivel nacional, reflejando más fielmente el costo de vida real.
+        \item \textbf{Productividad:} Se utiliza la PTF pero es mejor usar la productividad laboral porque refleja directamente el valor económico generado por cada trabajador.
+        \item \textbf{Teoría simplista:} Este enfoque ignora el poder monopsonístico en el mercado laboral.
+    \end{itemize}
+\end{frame}
+
+% Diapositiva 3: Derivación del Salario en Mercados Laborales Imperfectos
+\begin{frame}{¿Cual deberia ser la forma de estimar el cambio en el salario mínimo?}
+    \textbf{En mercados laborales con poder monopsonico (Borjas, 2013), la teoria economica postula que:}
+    \begin{align*}
+        \text{Maximización del beneficio:} \quad & \pi = P \cdot f(L) - w \cdot L \\
+        \text{Condición de primer orden:} \quad & P \cdot f'(L) = w + \frac{\partial w}{\partial L} L \\
+        \text{Salario óptimo:} \quad & w = P \cdot \text{MPL} \cdot \left( 1 + \frac{1}{e_s} \right) \\
+        \text{Logs y diferenciando:} \quad & \Delta w = \Delta P + \Delta \text{MPL} + \frac{\Delta {e_s}}{1+e_s}
+    \end{align*}
+    Donde:
+    \begin{itemize}
+        \item $P$: precio del producto
+        \item $\text{MPL}$: productividad marginal del trabajo.
+        \item $e_s$: elasticidad de la oferta laboral.
+    \end{itemize}
+\end{frame}
+
+% Diapositiva 4: Aplicación al Caso de Perú
+\begin{frame}{Replicando el análisis sin considerar que el mercado laboral es concentrado:}
+    \begin{center}
+        \includegraphics[width=\linewidth]{rmv_determination_sine.png}
+    \end{center}
+\end{frame}
+
+% Diapositiva 4: Aplicación al Caso de Perú
+\begin{frame}{Sin embargo, al usar la teoría más  realista, se observa que el salario mínimo en Peru esta por debajo del nivel que deberia estar:}
+    \begin{center}
+        \includegraphics[width=\linewidth]{rmv_determination_cone.png}
+    \end{center}
+\end{frame}
+
+\end{document}
