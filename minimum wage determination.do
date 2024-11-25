@@ -110,7 +110,7 @@ local initialyear=2013
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc) if year>=`initialyear'+1
 gen `rmv'tag=round(`rmv',1) if year==2024
-twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2024 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1095 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teórica") col(2)) ytitle("Soles") name(a, replace) title("IPC Nacional, PTF") xlabel(2012(4)2025)
+twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2024 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1125 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teórica") col(2)) ytitle("Soles") name(a, replace) title("Con inflación nacional y PTF") xlabel(2012(4)2025)
 
 
 local rmv="rmv_teo2"	
@@ -119,7 +119,7 @@ local initialyear=2008
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc) if year>=`initialyear'+1
 gen `rmv'tag=round(`rmv',1) if year==2023
-twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(b, replace) title("IPC subyacente Lima, PTF") xlabel(2008(4)2024)
+twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(b, replace) title("Con inflación subyacente Lima y PTF") xlabel(2008(4)2024)
 
 local rmv="rmv_teo3"
 gen `rmv'_pc=(ipc_nacional+pl_pc - e_pc/(1+e))
@@ -127,7 +127,7 @@ local initialyear=2013
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc) if year>=`initialyear'+1
 gen `rmv'tag=round(`rmv',1) if year==2023
-twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)   text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(c, replace) title("IPC Nacional, PL") xlabel(2012(4)2025)
+twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)   text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(c, replace) title("Con inflación nacional y PL") xlabel(2012(4)2025)
 
 local rmv="rmv_teo4"
 gen `rmv'_pc=(ipc_lima_subyacente+pl_pc - e_pc/(1+e))
@@ -135,10 +135,10 @@ local initialyear=2008
 gen `rmv'=rmv if year==`initialyear'
 replace `rmv'=L.`rmv'*(1+`rmv'_pc) if year>=`initialyear'+1
 gen `rmv'tag=round(`rmv',1) if year==2023
-twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(d, replace) title("IPC subyacente Lima, PL") xlabel(2008(4)2024)
+twoway line rmv year if year>=`initialyear' || line  `rmv' year if year>=`initialyear' || scatter `rmv'tag year if year==2023 , mlabel(`rmv'tag ) msymbol(none) mlabcolor(black) mlabsize(medium)  text(1025 2025 "1025") legend(order(1 "RMV observada" 2 "RMV teorica")) ytitle("Soles") name(d, replace) title("Con inflación subyacente Lima y PL") xlabel(2008(4)2024)
 
-grc1leg2 a b c d, leg(a) ycommon title(Salario Mínimo observado vs teórico simplificado) note("Fuente: The Conference Board, INEI, BCRP, ILO." "Nota: {&Delta}RMV teórica{sub:t} = inflacion{sub:t}+ {&Delta}productividad{sub:t}")
-graph export C:\Users\aalvarado\Downloads\rmv_determination_sine.png, replace
+*grc1leg2 a b c d, leg(a) ycommon title(Salario Mínimo observado vs teórico simplificado) note("Fuente: The Conference Board, INEI, BCRP, ILO." "Nota: {&Delta}RMV teórica{sub:t} = inflación{sub:t}+ {&Delta}productividad{sub:t}")
+*graph export C:\Users\aalvarado\Downloads\rmv_determination_sine.png, replace
 
-*grc1leg2 a b c d, leg(a) ycommon title("Salario Mínimo observado vs teórico en mercados concentrados") note("Fuente: The Conference Board, INEI, BCRP, ILO." "Nota: {&Delta}RMV teórica{sub:t} = inflación{sub:t}+ {&Delta}productividad{sub:t} - {&Delta}{&epsilon}{sub:t}/(1+{&epsilon}{sub:t}), donde {&epsilon} = elasticidad de la oferta laboral de Reyna y Céspedes (2016).")
-*graph export C:\Users\aalvarado\Downloads\rmv_determination_cone.png, replace
+grc1leg2 a b c d, leg(a) ycommon title("Salario Mínimo observado vs teórico en mercados concentrados") note("Fuente: The Conference Board, INEI, BCRP, ILO." "Nota: {&Delta}RMV teórica{sub:t} = inflación{sub:t}+ {&Delta}productividad{sub:t} - {&Delta}{&epsilon}{sub:t}/(1+{&epsilon}{sub:t}), donde {&epsilon} = elasticidad de la oferta laboral de Reyna y Céspedes (2016).")
+graph export C:\Users\aalvarado\Downloads\rmv_determination_cone.png, replace
