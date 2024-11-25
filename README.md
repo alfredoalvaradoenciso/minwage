@@ -16,8 +16,3 @@ La presentación aborda los siguientes puntos:
 1. **Supuestos del enfoque simplista:** Relación entre inflación y productividad.
 2. **Derivación teórica del salario mínimo:** En mercados monopsonísticos.
 3. **Aplicación al caso peruano:** Comparación entre enfoques con y sin concentración laboral.
-
-## Cómo contribuir
-
-Si tienes comentarios o sugerencias, siéntete libre de abrir un **Issue** o enviar un **Pull Request**. Todas las contribuciones son bienvenidas.
-
